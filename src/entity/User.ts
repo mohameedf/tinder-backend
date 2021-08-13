@@ -15,8 +15,8 @@ export class User {
     @Column()
     age: number;
 
-    @Column()
-    gender: string [ "mail" ];
+    @Column('enum')
+    gender: 'male' | 'female';
     
     @Column()
     favorite_gender: string;
