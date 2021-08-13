@@ -13,14 +13,14 @@ import {
 
 import { Contact } from "./Contact";
 import { User } from "./User";
-enum Status {
-  PENDING,
-  ACCEPTED,
-  BLOCKED,
+export enum Status {
+  PENDING = "pending",
+  ACCEPTED = "accepted",
+  BLOCKED = "blocked",
 }
 
 @Entity()
-export class Match {
+export class Match extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

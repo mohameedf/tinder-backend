@@ -14,7 +14,7 @@ import {
 import { Contact } from "./Contact";
 import { User } from "./User";
 @Entity()
-export class Music {
+export class Music extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

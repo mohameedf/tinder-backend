@@ -46,21 +46,24 @@ export class User extends BaseEntity {
   phone: string;
 
   @Column({ nullable: true })
+  password: string;
+
+  @Column({ nullable: true })
   bio: string;
 
   @Column({ nullable: true })
   image: string;
 
-  @Column({ default: false })
+  @Column({ default: true })
   isActive: boolean;
 
   @Column({ nullable: true })
-  otp: string;
+  otp: number;
 
   @Column({ default: 5 })
   otpCount: number;
 
-  @Column({ default: false })
+  @Column({ default: true })
   isVerified: boolean;
 
   @CreateDateColumn()
