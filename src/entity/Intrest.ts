@@ -11,7 +11,6 @@ import {
   JoinTable,
 } from "typeorm";
 
-import { Contact } from "./Contact";
 import { User } from "./User";
 @Entity()
 export class Intrest extends BaseEntity {

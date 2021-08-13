@@ -1,4 +1,3 @@
-import { Raw } from "typeorm";
 import { User } from "../../../src/entity/User";
 import * as validate from "validate.js";
 import Validator from "../../../utility/validation";
@@ -6,9 +5,6 @@ import { errRes, okRes, paginate } from "../../../utility/util.service";
 import { Intrest } from "../../../src/entity/Intrest";
 import { Music } from "../../../src/entity/Music";
 
-/**
- *
- */
 export default class UserController {
   /**
    *

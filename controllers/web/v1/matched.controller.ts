@@ -7,9 +7,6 @@ import { Intrest } from "../../../src/entity/Intrest";
 import { Music } from "../../../src/entity/Music";
 import { Match, Status } from "../../../src/entity/Match";
 
-/**
- *
- */
 export default class MatchController {
   /**
    *
@@ -96,6 +93,8 @@ export default class MatchController {
     });
     if (match) {
       match.status = Status.BLOCKED;
+      match.user1 = req.user.id;
+      match.user2 = user.id;
       await match.save();
     } else {
       match = await Match.create({
