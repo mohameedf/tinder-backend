@@ -16,13 +16,19 @@ route.post("/login", AuthController.login);
 
 //  Need Auth
 route.use(auth);
-route.post("/intrest", UserController.addIntrests);
-route.post("/music", UserController.addMusics);
+route.post("/intrest", UserController.updateIntrests);
+route.post("/music", UserController.updateMusics);
+route.get("/me", UserController.me);
+route.get("/user/:id", UserController.show);
 
 //matched
 route.post("/match", MatchController.request);
 route.post("/match/accept", MatchController.accept);
 route.post("/match/block", MatchController.block);
+route.post("/match/unblock", MatchController.unBlock);
+route.get("/suggestions", MatchController.suggestions);
+
+//
 
 //intrest
 route.get("/intrest", IntrestController.getAll);
