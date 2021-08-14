@@ -29,6 +29,7 @@ export default class IntrestController {
       return okRes(res, {
         status: "true",
         message: "Intrest deleted successfully 🎆✨",
+        data: intrest
       });
     } catch (err) {
       console.log(err);

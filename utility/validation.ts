@@ -86,4 +86,17 @@ export default class Validate {
       type: "string",
     },
   });
+  static contactInfo = (must = true) => ({
+    url: {
+      presence: must,
+      type: "string",
+    },
+    userId: {
+      presence: must,
+      type: "string",
+    },
+    contactId: {
+      presence: must, 
+    }
+  });
 }
