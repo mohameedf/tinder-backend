@@ -1,6 +1,4 @@
-import "reflect-metadata";
 import { createConnection } from "typeorm";
-import { Gender, User } from "./entity/User";
 import * as express from "express";
 const app = express();
 import webv1 from "../route/web/v1";
