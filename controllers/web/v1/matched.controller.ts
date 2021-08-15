@@ -1,4 +1,4 @@
-import { Raw } from "typeorm";
+import { getConnection, getRepository, Raw } from "typeorm";
 import { User } from "../../../src/entity/User";
 import * as validate from "validate.js";
 import Validator from "../../../utility/validation";
@@ -74,7 +74,6 @@ export default class MatchController {
     const body = req.body;
 
     // validate the req
-    console.log(body.user2);
     let user = req.user;
     if (!body.user2) return errRes(res, "User2 can't be empty");
 
@@ -158,7 +157,11 @@ export default class MatchController {
     users.forEach(function (x) {
       if (usersFilter[x.id]) {
         usersFilter[x.id].point += 1;
-      } else if (x.id != user.id) {
+      } else if (
+        x.id != user.id &&
+        x.gender == user.favorite_gender &&
+        x.favorite_gender == user.gender
+      ) {
         usersFilter[x.id] = { user: x, point: 1 };
       }
     });
